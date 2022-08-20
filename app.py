@@ -61,8 +61,6 @@ if txt_input:
         a = driver = webdriver.Firefox(executable_path="/home/appuser/.conda/bin/geckodriver",options=firefoxOptions)
         a.get(link+i,)
         sleep(1)
-        a= driver = webdriver.Firefox(executable_path="/home/appuser/.conda/bin/geckodriver",options=firefoxOptions)
-        a.get(link+str(i))
         b= a.page_source
         if b.find('SRASRAretail'):
             c = 'SRASRAretail Available'
@@ -77,6 +75,6 @@ if txt_input:
             sh = gc.open("BSR Ref")
             ws = sh.worksheet("Sheet3")
             ws.update_cell(x, 1, c)
-        a.quit()
+#         a.quit()
 
         x=x+1
