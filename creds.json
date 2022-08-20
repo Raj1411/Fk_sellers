@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "purplle-rev-358014",
+  "private_key_id": "fd2f38aa2d7f789b501cd773ffea26a7945961e7",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCeNtM5Y/a2pyYW\nHpocAoLt+xvGBWsElzAjIQTVXAF1au80Jvg2Z7xf+OAa9lkSlmmSVOwtaRYPJP4g\npFyt8p/nqB2p9rxLh5QorknDA2z47eSoLDDr6uxvSI5i2F/LLoCnaFMBpSrHzEbC\nBc9OjdIZN94FYq+XLDOscrUBSbZqIzUXwVBMy0KF1Bzw5GLFSYnjy4RiaDxKkDlz\nJGOcVlKCnQP2HLqrvuSz2krUvXgZ/KRxfFrKZRwGtmxYSPianKMpxBrWMTnlkAM1\n+XNR0cxNr96nlBqiTRIRJTgsw666Q2Fu4ad4mz/5dWnie4cgSKUANTtbo77kRqaj\ncZeHeuuPAgMBAAECggEARtSMo7jZDtSt/GEe5UNKknhE6tYqHxgAePmjTFGwZXzG\nMjbwEItIjj7BNdDr96JXCSfzxDCzq3wIOVzcERP5+qANB7ZqffXoon3EkAXMl3UJ\nVTDThgraZse41w+/cxsShd/yqV3kVSZi1yH6uVRMpvWX9BlGOwuS5rVDy5vQipsc\nPDZGyw/H8OyVuQ1HjPMC/1iXDsBDUbVgJlmjP3id0ogdP0hR2IxinWH/753HdeJQ\nbM6gk351wTNPoiWxR6qSv3fClKC23KquVSSmsRZ+9dCRib+q1Cfiv9re6HwPRCWl\nLt80zp8TruLM+voJwrqTpFMjCkfLUd1H9iQqYp9SIQKBgQDOYjTc03iRAmnvXAhz\nBXSmT1fKUXFbGpQ+l2MrOtKbq/nRLrRJGhcKL0GIYk+LWY1AQEKPKTYkzg1mlRhS\nlNkBmSqrAHRN4E/3vRayTm6AUCUaKKvH1JlGnbPkOzOksmCnguSVaxu0Zm+3s+3k\nW9lwuGM6g6Bzv6xU5dEvFGPdqwKBgQDEQAym1jUbHjtRTlUkmusw+FfAAVWnMwyu\nbWG3ezP0Ks1cYunztTNTb18XYd8MKmoZ5Tgkm+v6v9K43MvBGA29d8wzPjz6j+8V\nNg8Uclz6s/CLhE6CTjg4IqrSJt2gawgp4VceSX6MQVT1LTNf/qWGTs+ro0Ciw+ve\nDGW8DGVdrQKBgFipA8Ch8DeLa+ryBIc1HsmbaEF3/1R99JV2/5lAqd1KYgWlJLoK\nxT8Q0fw/D6DzlaS2dmF9+M6S3lrlTg+b9iWjoRrZFR2ncXMh/jAXVY014Np+Al3U\nTQxzDybK8AKexrrvljdCTiKPpwqp91aUxrKP48Dtbu6KtwO5vsWU4toFAoGBAKNq\nYh6ayGXoaqRtgeCVT7rbUNaFRfmQPMMSOgg7AywSaCbCBuX0wOR9HMWvrbfHqcoe\nYP27CGkoSiO9V71WdjqLAvK4pLZQHFmhRjVUdbAdHfRPG8DNuWqlE3EjA/GMrqOR\nDKYftMy9qizukpUgylxoS+00Z6IhWsrvr9dCyzWRAoGBAMTD4fkd/Q60v1T4TjHn\nRlmUOt70sjbf6zVaTMqNEKm0UaKHzQ6GePilFNb1qji/Eam9ij+r9LiWB1KK1eMB\nZBbVxKDlD5IMaDPpfb8DcJ31U2MUr4D8k6wZFtueD+0xyg8jkK02TdZkWfwCngjT\nW88BO8xfBf7EEdNBMIfk6L3D\n-----END PRIVATE KEY-----\n",
+  "client_email": "purplle-rev@purplle-rev-358014.iam.gserviceaccount.com",
+  "client_id": "109065001652941103522",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/purplle-rev%40purplle-rev-358014.iam.gserviceaccount.com"
+}
