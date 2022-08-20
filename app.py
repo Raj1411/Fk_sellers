@@ -70,11 +70,11 @@ if txt_input:
             ws.update_cell(x, 1, c)
 
         else:
-            c = 'SRASRAretail Not Available'
-            gc = gspread.service_account(filename="./creds.json")
-            sh = gc.open("BSR Ref")
-            ws = sh.worksheet("Sheet3")
-            ws.update_cell(x, 1, c)
+            c1 = 'SRASRAretail Not Available'
+            gc1 = gspread.service_account(filename="./creds.json")
+            sh1 = gc1.open("BSR Ref")
+            ws1 = sh.worksheet("Sheet3")
+            ws1.update_cell(x, 1, c1)
         a.quit()
 
         x=x+1
