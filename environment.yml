@@ -5,3 +5,4 @@ dependencies:
   - geckodriver
   - selenium
   - openpyxl
+  - gspread
