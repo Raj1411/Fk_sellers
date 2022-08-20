@@ -75,6 +75,6 @@ if txt_input:
             sh1 = gc1.open("BSR Ref")
             ws1 = sh1.worksheet("Sheet3")
             ws1.update_cell(x, 1, c1)
-        a.quit()
+#         a.quit()
 
         x=x+1
