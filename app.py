@@ -1,26 +1,18 @@
 import streamlit as st
 from selenium import webdriver
 from time import sleep
-import pandas as pd
 from selenium.webdriver.chrome.options import Options
-import streamlit.components as stc
-import base64
-import io, os
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.firefox.service import Service
-# from webdriver_manager.firefox import GeckoDriverManager
-# from webdrivermanager import GeckoDriverManager
-# import geckodriver_autoinstaller
-
-# from chromedriver_py import binary_path
-# from webdriver_manager.chrome import ChromeDriverManager
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
 
 
 
-st.title('Extract Dropbox Links')
+st.title('Flipkart Sellers Check')
 # chromedriver_autoinstaller.install()
 
 # option=webdriver.ChromeOptions()
@@ -39,7 +31,6 @@ firefoxOptions.add_argument("--headless")
 # driver = webdriver.Firefox(service=s,options=firefoxOptions)
 
 
-driver = webdriver.Firefox(executable_path="/home/appuser/.conda/bin/geckodriver",options=firefoxOptions)
 headers1 = {
     'Accept-Encoding': 'gzip, deflate, sdch',
     'Accept-Language': 'en-US,en;q=0.8',
@@ -51,72 +42,40 @@ headers1 = {
 
 
 
-url1=st.text_input('Enter Dropbox link')
-if url1=="":
-    ""
-else:
-    driver.get(url1)
-sleep(2)
+scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
+         "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
 
-# Add a placeholder
-if url1=="":
-    ""
-else:
-    latest_iteration = st.empty()
-    bar = st.progress(0)
-    for i in range(100):
-  # Update the progress bar with each iteration.
-        latest_iteration.text(f'Progress {i+1}')
-        bar.progress(i + 1)
-        sleep(0.1)
+txt_input = st.text_input("Enter list of all Flipkart FSN's: ")
+
+# options = webdriver.ChromeOptions()
+# options.add_argument('headless')
+# options.add_argument("disable-gpu")
 
 
+link = 'https://www.flipkart.com/sellers?pid='
 
-SCROLL_PAUSE_TIME = 1
+x=1
+if txt_input:
+    txt_input = txt_input.split(" ")
+    for i in txt_input:
+        a = driver = webdriver.Firefox(executable_path="/home/appuser/.conda/bin/geckodriver",options=firefoxOptions)
+        a.get(link+i,)
+        sleep(1)
+        a= driver = webdriver.Firefox(executable_path="/home/appuser/.conda/bin/geckodriver",options=firefoxOptions)
+        a.get(link+str(i))
+        b= a.page_source
+        if b.find('SRASRAretail'):
+            c = 'SRASRAretail Available'
+            gc = gspread.service_account(filename="./creds.json")
+            sh = gc.open("BSR Ref")
+            ws = sh.worksheet("Sheet3")
+            ws.update_cell(x, 1, c)
 
+        else:
+            c = 'SRASRAretail Not Available'
+            gc = gspread.service_account(filename="./creds.json")
+            sh = gc.open("BSR Ref")
+            ws = sh.worksheet("Sheet3")
+            ws.update_cell(x, 1, c)
 
-# Get scroll height
-last_height = driver.execute_script("return document.documentElement.scrollHeight")
-while True:
-    # Scroll down to bottom
-    driver.execute_script("window.scrollTo(0,document.documentElement.scrollHeight);")
-
-    # Wait to load page
-    sleep(SCROLL_PAUSE_TIME)
-
-    # Calculate new scroll height and compare with last scroll height
-    new_height = driver.execute_script("return document.documentElement.scrollHeight")
-    if new_height == last_height:
-       print("break")
-       break
-    last_height = new_height
-
-
-a=driver.find_elements_by_xpath("//a[@href]")
-
-links=[]
-for i in a:
-    ax=i.get_attribute('href')
-    if "https://www.dropbox.com/sh" in ax:
-        links.append(ax)
-
-
-if url1=="":
-    ""
-else:
-    st.write('Extraction is Completed')
-
-
-if url1=="":
-    ""
-else:
-    towrite = io.BytesIO()
-    df=pd.DataFrame(links,columns=['Links'])
-    # df.to_excel('Links.xlsx')
-    driver.close()
-    downloaded_file = df.to_excel(towrite, encoding='utf-8', index=False, header=True)
-    towrite.seek(0)
-    b64 = base64.b64encode(towrite.read()).decode()
-    linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="DropboxLink.xlsx">Download file</a>'
-    st.markdown(linko, unsafe_allow_html=True)
-
+        x=x+1
